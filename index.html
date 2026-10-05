@@ -159,7 +159,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .chart { margin: 0; border-top: 2px solid var(--ink); padding-top: 1rem; display: flex; flex-direction: column; min-width: 0; counter-increment: fig; }
 .chart h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 400; letter-spacing: -0.01em; line-height: 1.25; font-variation-settings: "opsz" 36; }
 .chart h3::before { content: "Fig. " counter(fig); display: block; font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
-.plot { margin-top: 1.25rem; min-height: 14rem; }
+.plot { margin-top: 1.25rem; }
 .plot svg { display: block; width: 100%; height: auto; overflow: visible; }
 .plot text { font-family: var(--sans); font-size: 11px; fill: var(--muted); }
 .plot .val { fill: var(--ink); font-weight: 600; }
@@ -393,6 +393,14 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @keyframes hv-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 @media (max-width: 40rem) { .hv-card--bars { left: -4%; } .hv-card--ring { right: -3%; } .hv-dots { inset: -5% -4%; } .hv-block { inset: 6% -4% -5% 7%; } }
 
+/* Data : sources, barres horizontales */
+.data-note { max-width: 32rem; font-family: var(--sans); font-size: 0.88rem; color: var(--muted); }
+.chart figcaption { margin-top: 0.5rem; font-family: var(--sans); font-size: 0.78rem; line-height: 1.45; color: var(--muted); }
+.plot .lab { fill: var(--ink); font-size: 11px; }
+.plot .track { fill: var(--accent-soft); }
+.plot .bar.hl { fill: var(--c2); }
+.chart figcaption a { color: inherit; }
+
 .view[hidden] { display: none; }
 .progress[hidden] { display: none; }
   </style>
@@ -449,36 +457,40 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
       </div>
 
         <dl class="kpis">
-          <div class="kpi"><dd>38<small>Md$</small></dd><dt>Marché BI mondial 2025</dt></div>
-          <div class="kpi"><dd>40<small>%</small></dd><dt>Requêtes en langage naturel d'ici 2026</dt></div>
-          <div class="kpi"><dd>56<small>Md$</small></dd><dt>Projection marché 2030</dt></div>
+          <div class="kpi"><dd>67<small>%</small></dd><dt>des entreprises françaises de 20 salariés ou plus utilisent l'IA générative début 2026 (Banque de France)</dt></div>
+          <div class="kpi"><dd>18<small>%</small></dd><dt>des entreprises de 10 salariés ou plus utilisent l'IA en 2025, contre 10 % en 2024 (Insee)</dt></div>
+          <div class="kpi"><dd>31<small>%</small></dd><dt>des utilisateurs d'IA générative déclarent des gains de productivité (Banque de France, 2026)</dt></div>
         </dl>
       </div>
     </section>
 
     <section class="section" id="charts" aria-labelledby="titre-charts">
       <div class="wrap">
-        <div class="section-head"><h2 id="titre-charts">Data en direct</h2></div>
+        <div class="section-head"><h2 id="titre-charts">Data en direct</h2><p class="data-note">L'IA dans les entreprises françaises, en 2026 : enquête de la Banque de France (février-avril 2026, 20 salariés ou plus) et publication de l'Insee (juillet 2026, données 2025, 10 salariés ou plus). Les deux mesures n'ont pas le même périmètre ni la même définition : elles ne sont pas comparables entre elles.</p></div>
         <div class="charts">
           <figure class="chart">
-            <h3>Croissance marché BI (Md$)</h3>
-            <div class="plot"><svg viewBox="0 0 360 230" role="img" aria-label="Courbe : marché mondial de la BI de 22 milliards de dollars en 2020 à 56 milliards projetés en 2030"><line class="grid" x1="34" x2="346" y1="202.0" y2="202.0"/><text x="28" y="206.0" text-anchor="end">0</text><line class="grid" x1="34" x2="346" y1="142.0" y2="142.0"/><text x="28" y="146.0" text-anchor="end">20</text><line class="grid" x1="34" x2="346" y1="82.0" y2="82.0"/><text x="28" y="86.0" text-anchor="end">40</text><line class="grid" x1="34" x2="346" y1="22.0" y2="22.0"/><text x="28" y="26.0" text-anchor="end">60</text><line class="base" x1="34" x2="346" y1="202.0" y2="202.0"/><polygon class="ar" points="34,202.0 34.0,136.0 65.2,127.0 96.4,119.5 127.6,112.0 158.8,101.2 190.0,88.0 221.2,76.0 252.4,64.0 283.6,52.0 314.8,43.0 346.0,34.0 346.0,202.0"/><polyline class="ln" points="34.0,136.0 65.2,127.0 96.4,119.5 127.6,112.0 158.8,101.2 190.0,88.0 221.2,76.0 252.4,64.0 283.6,52.0 314.8,43.0 346.0,34.0"/><circle class="pt" cx="34.0" cy="136.0" r="3.5"/><circle class="pt" cx="65.2" cy="127.0" r="3.5"/><circle class="pt" cx="96.4" cy="119.5" r="3.5"/><circle class="pt" cx="127.6" cy="112.0" r="3.5"/><circle class="pt" cx="158.8" cy="101.2" r="3.5"/><circle class="pt" cx="190.0" cy="88.0" r="3.5"/><circle class="pt" cx="221.2" cy="76.0" r="3.5"/><circle class="pt" cx="252.4" cy="64.0" r="3.5"/><circle class="pt" cx="283.6" cy="52.0" r="3.5"/><circle class="pt" cx="314.8" cy="43.0" r="3.5"/><circle class="pt" cx="346.0" cy="34.0" r="3.5"/><text class="val" x="34.0" y="127.0" text-anchor="middle">22</text><text class="val" x="190.0" y="79.0" text-anchor="middle">38</text><text class="val" x="346.0" y="25.0" text-anchor="middle">56</text><text x="34.0" y="222" text-anchor="middle">2020</text><text x="96.4" y="222" text-anchor="middle">2022</text><text x="158.8" y="222" text-anchor="middle">2024</text><text x="221.2" y="222" text-anchor="middle">2026</text><text x="283.6" y="222" text-anchor="middle">2028</text><text x="346.0" y="222" text-anchor="middle">2030</text></svg></div>
-            <details class="data"><summary>Voir les données</summary><table><thead><tr><th scope="col">Année</th><th scope="col">Md$</th></tr></thead><tbody><tr><th scope="row">2020</th><td>22 Md$</td></tr><tr><th scope="row">2021</th><td>25 Md$</td></tr><tr><th scope="row">2022</th><td>27,5 Md$</td></tr><tr><th scope="row">2023</th><td>30 Md$</td></tr><tr><th scope="row">2024</th><td>33,6 Md$</td></tr><tr><th scope="row">2025</th><td>38 Md$</td></tr><tr><th scope="row">2026</th><td>42 Md$</td></tr><tr><th scope="row">2027</th><td>46 Md$</td></tr><tr><th scope="row">2028</th><td>50 Md$</td></tr><tr><th scope="row">2029</th><td>53 Md$</td></tr><tr><th scope="row">2030</th><td>56 Md$</td></tr></tbody></table></details>
+            <h3>Entreprises françaises utilisant l'IA (%)</h3>
+            <div class="plot"><svg viewBox="0 0 360 230" role="img" aria-label="Histogramme : 6 % en 2023, 10 % en 2024, 18 % en 2025"><line class="grid" x1="30" x2="352" y1="202.0" y2="202.0"/><text x="24" y="206.0" text-anchor="end">0</text><line class="grid" x1="30" x2="352" y1="157.0" y2="157.0"/><text x="24" y="161.0" text-anchor="end">5</text><line class="grid" x1="30" x2="352" y1="112.0" y2="112.0"/><text x="24" y="116.0" text-anchor="end">10</text><line class="grid" x1="30" x2="352" y1="67.0" y2="67.0"/><text x="24" y="71.0" text-anchor="end">15</text><line class="grid" x1="30" x2="352" y1="22.0" y2="22.0"/><text x="24" y="26.0" text-anchor="end">20</text><line class="base" x1="30" x2="352" y1="202.0" y2="202.0"/><rect class="bar" x="56.8" y="148.0" width="53.7" height="54.0" rx="2"/><text class="val" x="83.7" y="142.0" text-anchor="middle">6&#8239;%</text><text x="83.7" y="222" text-anchor="middle">2023</text><rect class="bar" x="164.2" y="112.0" width="53.7" height="90.0" rx="2"/><text class="val" x="191.0" y="106.0" text-anchor="middle">10&#8239;%</text><text x="191.0" y="222" text-anchor="middle">2024</text><rect class="bar hl" x="271.5" y="40.0" width="53.7" height="162.0" rx="2"/><text class="val" x="298.3" y="34.0" text-anchor="middle">18&#8239;%</text><text x="298.3" y="222" text-anchor="middle">2025</text></svg></div>
+            <details class="data"><summary>Voir les données</summary><table><thead><tr><th scope="col">Année</th><th scope="col">Part</th></tr></thead><tbody><tr><th scope="row">2023</th><td>6 %</td></tr><tr><th scope="row">2024</th><td>10 %</td></tr><tr><th scope="row">2025</th><td>18 %</td></tr></tbody></table></details>
+            <figcaption>Source : <a href="https://www.insee.fr/fr/statistiques/9025878" rel="noopener">Insee, « Les TIC dans les entreprises en 2025 »</a> (juillet 2026). Entreprises de 10 salariés ou plus.</figcaption>
           </figure>
           <figure class="chart">
-            <h3>Adoption par secteur (%)</h3>
-            <div class="plot"><svg viewBox="0 0 360 230" role="img" aria-label="Histogramme : adoption par secteur, de 24 % pour BFSI à 9 % pour l'industrie"><line class="grid" x1="30" x2="352" y1="202.0" y2="202.0"/><text x="24" y="206.0" text-anchor="end">0</text><line class="grid" x1="30" x2="352" y1="142.0" y2="142.0"/><text x="24" y="146.0" text-anchor="end">10</text><line class="grid" x1="30" x2="352" y1="82.0" y2="82.0"/><text x="24" y="86.0" text-anchor="end">20</text><line class="grid" x1="30" x2="352" y1="22.0" y2="22.0"/><text x="24" y="26.0" text-anchor="end">30</text><line class="base" x1="30" x2="352" y1="202.0" y2="202.0"/><rect class="bar" x="41.3" y="58.0" width="31.1" height="144.0" rx="2"/><text class="val" x="56.8" y="52.0" text-anchor="middle">24%</text><text style="font-size:10px" x="56.8" y="222" text-anchor="middle">BFSI</text><rect class="bar" x="94.9" y="70.0" width="31.1" height="132.0" rx="2"/><text class="val" x="110.5" y="64.0" text-anchor="middle">22%</text><text style="font-size:10px" x="110.5" y="222" text-anchor="middle">IT/Télécom</text><rect class="bar" x="148.6" y="94.0" width="31.1" height="108.0" rx="2"/><text class="val" x="164.2" y="88.0" text-anchor="middle">18%</text><text style="font-size:10px" x="164.2" y="222" text-anchor="middle">Santé</text><rect class="bar" x="202.3" y="112.0" width="31.1" height="90.0" rx="2"/><text class="val" x="217.8" y="106.0" text-anchor="middle">15%</text><text style="font-size:10px" x="217.8" y="222" text-anchor="middle">Retail</text><rect class="bar" x="255.9" y="130.0" width="31.1" height="72.0" rx="2"/><text class="val" x="271.5" y="124.0" text-anchor="middle">12%</text><text style="font-size:10px" x="271.5" y="222" text-anchor="middle">RH</text><rect class="bar" x="309.6" y="148.0" width="31.1" height="54.0" rx="2"/><text class="val" x="325.2" y="142.0" text-anchor="middle">9%</text><text style="font-size:10px" x="325.2" y="222" text-anchor="middle">Industrie</text></svg></div>
-            <details class="data"><summary>Voir les données</summary><table><thead><tr><th scope="col">Secteur</th><th scope="col">Adoption</th></tr></thead><tbody><tr><th scope="row">BFSI</th><td>24 %</td></tr><tr><th scope="row">IT/Télécom</th><td>22 %</td></tr><tr><th scope="row">Santé</th><td>18 %</td></tr><tr><th scope="row">Retail</th><td>15 %</td></tr><tr><th scope="row">RH</th><td>12 %</td></tr><tr><th scope="row">Industrie</th><td>9 %</td></tr></tbody></table></details>
+            <h3>IA générative selon la taille, début 2026 (%)</h3>
+            <div class="plot"><svg viewBox="0 0 360 192" role="img" aria-label="Barres : de 64 % pour les entreprises de 20 à 49 salariés à 83 % pour celles de 1 000 salariés et plus"><text x="124" y="25" text-anchor="end" class="lab">20-49 salariés</text><rect class="track" x="132" y="12" width="178" height="16" rx="2"/><rect class="bar" x="132" y="12" width="113.9" height="16" rx="2"/><text class="val" x="251.9" y="25">64&#8239;%</text><text x="124" y="55" text-anchor="end" class="lab">50-99</text><rect class="track" x="132" y="42" width="178" height="16" rx="2"/><rect class="bar" x="132" y="42" width="121.0" height="16" rx="2"/><text class="val" x="259.0" y="55">68&#8239;%</text><text x="124" y="85" text-anchor="end" class="lab">100-249</text><rect class="track" x="132" y="72" width="178" height="16" rx="2"/><rect class="bar" x="132" y="72" width="133.5" height="16" rx="2"/><text class="val" x="271.5" y="85">75&#8239;%</text><text x="124" y="115" text-anchor="end" class="lab">250-499</text><rect class="track" x="132" y="102" width="178" height="16" rx="2"/><rect class="bar" x="132" y="102" width="129.9" height="16" rx="2"/><text class="val" x="267.9" y="115">73&#8239;%</text><text x="124" y="145" text-anchor="end" class="lab">500-999</text><rect class="track" x="132" y="132" width="178" height="16" rx="2"/><rect class="bar" x="132" y="132" width="149.5" height="16" rx="2"/><text class="val" x="287.5" y="145">84&#8239;%</text><text x="124" y="175" text-anchor="end" class="lab">1 000 et plus</text><rect class="track" x="132" y="162" width="178" height="16" rx="2"/><rect class="bar" x="132" y="162" width="147.7" height="16" rx="2"/><text class="val" x="285.7" y="175">83&#8239;%</text></svg></div>
+            <details class="data"><summary>Voir les données</summary><table><thead><tr><th scope="col">Taille</th><th scope="col">Part</th></tr></thead><tbody><tr><th scope="row">20-49 salariés</th><td>64 %</td></tr><tr><th scope="row">50-99</th><td>68 %</td></tr><tr><th scope="row">100-249</th><td>75 %</td></tr><tr><th scope="row">250-499</th><td>73 %</td></tr><tr><th scope="row">500-999</th><td>84 %</td></tr><tr><th scope="row">1 000 et plus</th><td>83 %</td></tr></tbody></table></details>
+            <figcaption>Source : <a href="https://www.banque-france.fr/fr/publications-et-statistiques/publications/lia-sinstalle-dans-les-entreprises-francaises-une-diffusion-rapide-mais-des-gains-de-productivite" rel="noopener">Banque de France, Bulletin n° 266</a> (septembre 2026), enquête de février-avril 2026. Entreprises de 20 salariés ou plus ; ensemble : 67 %.</figcaption>
           </figure>
           <figure class="chart">
-            <h3>Requêtes NLP — projection (%)</h3>
-            <div class="plot"><svg viewBox="0 0 360 230" role="img" aria-label="Courbe : part des requêtes en langage naturel de 8 % en 2022 à 52 % en 2027"><line class="grid" x1="34" x2="346" y1="202.0" y2="202.0"/><text x="28" y="206.0" text-anchor="end">0</text><line class="grid" x1="34" x2="346" y1="142.0" y2="142.0"/><text x="28" y="146.0" text-anchor="end">20</text><line class="grid" x1="34" x2="346" y1="82.0" y2="82.0"/><text x="28" y="86.0" text-anchor="end">40</text><line class="grid" x1="34" x2="346" y1="22.0" y2="22.0"/><text x="28" y="26.0" text-anchor="end">60</text><line class="base" x1="34" x2="346" y1="202.0" y2="202.0"/><polygon class="ar" points="34,202.0 34.0,178.0 96.4,160.0 158.8,136.0 221.2,112.0 283.6,82.0 346.0,46.0 346.0,202.0"/><polyline class="ln" points="34.0,178.0 96.4,160.0 158.8,136.0 221.2,112.0 283.6,82.0 346.0,46.0"/><circle class="pt" cx="34.0" cy="178.0" r="3.5"/><circle class="pt" cx="96.4" cy="160.0" r="3.5"/><circle class="pt" cx="158.8" cy="136.0" r="3.5"/><circle class="pt" cx="221.2" cy="112.0" r="3.5"/><circle class="pt" cx="283.6" cy="82.0" r="3.5"/><circle class="pt" cx="346.0" cy="46.0" r="3.5"/><text class="val" x="34.0" y="169.0" text-anchor="middle">8</text><text class="val" x="96.4" y="151.0" text-anchor="middle">14</text><text class="val" x="158.8" y="127.0" text-anchor="middle">22</text><text class="val" x="221.2" y="103.0" text-anchor="middle">30</text><text class="val" x="283.6" y="73.0" text-anchor="middle">40</text><text class="val" x="346.0" y="37.0" text-anchor="middle">52</text><text x="34.0" y="222" text-anchor="middle">2022</text><text x="96.4" y="222" text-anchor="middle">2023</text><text x="158.8" y="222" text-anchor="middle">2024</text><text x="221.2" y="222" text-anchor="middle">2025</text><text x="283.6" y="222" text-anchor="middle">2026</text><text x="346.0" y="222" text-anchor="middle">2027</text></svg></div>
-            <details class="data"><summary>Voir les données</summary><table><thead><tr><th scope="col">Année</th><th scope="col">Part</th></tr></thead><tbody><tr><th scope="row">2022</th><td>8 %</td></tr><tr><th scope="row">2023</th><td>14 %</td></tr><tr><th scope="row">2024</th><td>22 %</td></tr><tr><th scope="row">2025</th><td>30 %</td></tr><tr><th scope="row">2026</th><td>40 %</td></tr><tr><th scope="row">2027</th><td>52 %</td></tr></tbody></table></details>
+            <h3>Adoption de l'IA par secteur, 2025 (%)</h3>
+            <div class="plot"><svg viewBox="0 0 360 252" role="img" aria-label="Barres : de 59 % pour l'information et la communication à 9 % pour les transports"><text x="124" y="25" text-anchor="end" class="lab">Information et comm.</text><rect class="track" x="132" y="12" width="178" height="16" rx="2"/><rect class="bar" x="132" y="12" width="150.0" height="16" rx="2"/><text class="val" x="288.0" y="25">59&#8239;%</text><text x="124" y="55" text-anchor="end" class="lab">Act. scientifiques et tech.</text><rect class="track" x="132" y="42" width="178" height="16" rx="2"/><rect class="bar" x="132" y="42" width="83.9" height="16" rx="2"/><text class="val" x="221.9" y="55">33&#8239;%</text><text x="124" y="85" text-anchor="end" class="lab">Immobilier</text><rect class="track" x="132" y="72" width="178" height="16" rx="2"/><rect class="bar" x="132" y="72" width="66.1" height="16" rx="2"/><text class="val" x="204.1" y="85">26&#8239;%</text><text x="124" y="115" text-anchor="end" class="lab">Énergie, eau, déchets</text><rect class="track" x="132" y="102" width="178" height="16" rx="2"/><rect class="bar" x="132" y="102" width="48.3" height="16" rx="2"/><text class="val" x="186.3" y="115">19&#8239;%</text><text x="124" y="145" text-anchor="end" class="lab">Industrie manufacturière</text><rect class="track" x="132" y="132" width="178" height="16" rx="2"/><rect class="bar" x="132" y="132" width="43.2" height="16" rx="2"/><text class="val" x="181.2" y="145">17&#8239;%</text><text x="124" y="175" text-anchor="end" class="lab">Commerce</text><rect class="track" x="132" y="162" width="178" height="16" rx="2"/><rect class="bar" x="132" y="162" width="33.1" height="16" rx="2"/><text class="val" x="171.1" y="175">13&#8239;%</text><text x="124" y="205" text-anchor="end" class="lab">Construction</text><rect class="track" x="132" y="192" width="178" height="16" rx="2"/><rect class="bar" x="132" y="192" width="25.4" height="16" rx="2"/><text class="val" x="163.4" y="205">10&#8239;%</text><text x="124" y="235" text-anchor="end" class="lab">Transports, entreposage</text><rect class="track" x="132" y="222" width="178" height="16" rx="2"/><rect class="bar" x="132" y="222" width="22.9" height="16" rx="2"/><text class="val" x="160.9" y="235">9&#8239;%</text></svg></div>
+            <details class="data"><summary>Voir les données</summary><table><thead><tr><th scope="col">Secteur</th><th scope="col">Part</th></tr></thead><tbody><tr><th scope="row">Information et communication</th><td>59 %</td></tr><tr><th scope="row">Activités scientifiques et techniques</th><td>33 %</td></tr><tr><th scope="row">Immobilier</th><td>26 %</td></tr><tr><th scope="row">Énergie, eau, déchets</th><td>19 %</td></tr><tr><th scope="row">Industrie manufacturière</th><td>17 %</td></tr><tr><th scope="row">Commerce</th><td>13 %</td></tr><tr><th scope="row">Construction</th><td>10 %</td></tr><tr><th scope="row">Transports et entreposage</th><td>9 %</td></tr></tbody></table></details>
+            <figcaption>Source : <a href="https://www.insee.fr/fr/statistiques/9025878" rel="noopener">Insee, « Les TIC dans les entreprises en 2025 »</a> (juillet 2026).</figcaption>
           </figure>
           <figure class="chart">
-            <h3>Cloud vs On-premise (%)</h3>
-            <div class="plot"><svg viewBox="0 0 360 200" role="img" aria-label="Anneau : cloud 66 %, on-premise 18 %, hybride 16 %"><circle cx="88" cy="100" r="62" fill="none" class="s0" stroke-width="26" stroke-dasharray="255.11 134.45" stroke-dashoffset="0.00" transform="rotate(-90 88 100)"/><circle cx="88" cy="100" r="62" fill="none" class="s1" stroke-width="26" stroke-dasharray="68.12 321.44" stroke-dashoffset="-257.11" transform="rotate(-90 88 100)"/><circle cx="88" cy="100" r="62" fill="none" class="s2" stroke-width="26" stroke-dasharray="60.33 329.23" stroke-dashoffset="-327.23" transform="rotate(-90 88 100)"/><text class="center" x="88" y="106" text-anchor="middle">66%</text><text x="88" y="124" text-anchor="middle">Cloud</text><rect class="w0" x="190" y="60" width="12" height="12" rx="2"/><text class="legend" x="210" y="70">Cloud <tspan class="val">66&#8239;%</tspan></text><rect class="w1" x="190" y="90" width="12" height="12" rx="2"/><text class="legend" x="210" y="100">On-premise <tspan class="val">18&#8239;%</tspan></text><rect class="w2" x="190" y="120" width="12" height="12" rx="2"/><text class="legend" x="210" y="130">Hybride <tspan class="val">16&#8239;%</tspan></text></svg></div>
-            <details class="data"><summary>Voir les données</summary><table><thead><tr><th scope="col">Mode</th><th scope="col">Part</th></tr></thead><tbody><tr><th scope="row">Cloud</th><td>66 %</td></tr><tr><th scope="row">On-premise</th><td>18 %</td></tr><tr><th scope="row">Hybride</th><td>16 %</td></tr></tbody></table></details>
+            <h3>Usages et gains de l'IA, 2026 (% des entreprises utilisatrices)</h3>
+            <div class="plot"><svg viewBox="0 0 360 162" role="img" aria-label="Barres : génération de texte 85 %, fonctions support 74 %, production 14 % ; gains de productivité déclarés 31 % pour l'IA générative et 41 % pour les autres IA"><text x="124" y="25" text-anchor="end" class="lab">Génération de texte</text><rect class="track" x="132" y="12" width="178" height="16" rx="2"/><rect class="bar" x="132" y="12" width="151.3" height="16" rx="2"/><text class="val" x="289.3" y="25">85&#8239;%</text><text x="124" y="55" text-anchor="end" class="lab">Fonctions support</text><rect class="track" x="132" y="42" width="178" height="16" rx="2"/><rect class="bar" x="132" y="42" width="131.7" height="16" rx="2"/><text class="val" x="269.7" y="55">74&#8239;%</text><text x="124" y="85" text-anchor="end" class="lab">Production</text><rect class="track" x="132" y="72" width="178" height="16" rx="2"/><rect class="bar" x="132" y="72" width="24.9" height="16" rx="2"/><text class="val" x="162.9" y="85">14&#8239;%</text><text x="124" y="115" text-anchor="end" class="lab">Gains : IA générative</text><rect class="track" x="132" y="102" width="178" height="16" rx="2"/><rect class="bar hl" x="132" y="102" width="55.2" height="16" rx="2"/><text class="val" x="193.2" y="115">31&#8239;%</text><text x="124" y="145" text-anchor="end" class="lab">Gains : autres IA</text><rect class="track" x="132" y="132" width="178" height="16" rx="2"/><rect class="bar hl" x="132" y="132" width="73.0" height="16" rx="2"/><text class="val" x="211.0" y="145">41&#8239;%</text></svg></div>
+            <details class="data"><summary>Voir les données</summary><table><thead><tr><th scope="col">Indicateur</th><th scope="col">Part</th></tr></thead><tbody><tr><th scope="row">Génération de texte</th><td>85 %</td></tr><tr><th scope="row">Fonctions support</th><td>74 %</td></tr><tr><th scope="row">Production</th><td>14 %</td></tr><tr><th scope="row">Gains de productivité (IA générative)</th><td>31 %</td></tr><tr><th scope="row">Gains de productivité (autres IA)</th><td>41 %</td></tr></tbody></table></details>
+            <figcaption>Source : <a href="https://www.banque-france.fr/fr/publications-et-statistiques/publications/lia-sinstalle-dans-les-entreprises-francaises-une-diffusion-rapide-mais-des-gains-de-productivite" rel="noopener">Banque de France, Bulletin n° 266</a> (septembre 2026), enquête de février-avril 2026. Usages : entreprises utilisant l'IA générative.</figcaption>
           </figure>
 
         </div>
@@ -556,28 +568,46 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
             <span class="badge badge--soon">Bientôt</span>
             <div>
               <p class="kicker">Outils · Comparatif</p>
-              <h3>Tableau vs Power BI en 2025 : au-delà du débat de clocher</h3>
-              <p class="ex">La vraie question n'est pas quel outil est "meilleur". C'est lequel correspond à votre organisation, votre stack, et vos ambitions data à 3 ans.</p>
+              <h3>Tableau ou Power BI en 2026-2027 : choisir selon sa stack, son IA et sa souveraineté</h3>
+              <p class="ex">Agents, applications générées en langage naturel, couche sémantique ouverte : la comparaison a changé. Une grille de décision pour choisir selon votre organisation, votre écosystème et votre exigence de souveraineté.</p>
             </div>
-            <p class="row-time">5 min</p>
+            <p class="row-time">T4 2026</p>
           </li>
           <li class="row" data-status="bientot">
             <span class="badge badge--soon">Bientôt</span>
             <div>
-              <p class="kicker">Gouvernance · Stratégie</p>
-              <h3>La couche sémantique : l'actif data que personne ne voit</h3>
-              <p class="ex">Pourquoi les chiffres du Contrôle de gestion ne correspondent-ils jamais à ceux du Marketing ? Parce que personne n'a construit la source de vérité commune.</p>
+              <p class="kicker">Gouvernance · Modèle sémantique</p>
+              <h3>La couche sémantique, carburant des agents IA</h3>
+              <p class="ex">Vues sémantiques, ontologies, standards ouverts : pourquoi le modèle sémantique devient le socle des assistants et des agents, et comment préparer vos modèles avant de les brancher à Copilot.</p>
             </div>
-            <p class="row-time">6 min</p>
+            <p class="row-time">T1 2027</p>
           </li>
           <li class="row" data-status="bientot">
             <span class="badge badge--soon">Bientôt</span>
             <div>
-              <p class="kicker">Démocratisation · Terrain</p>
-              <h3>Le self-service BI, dix ans après : promesse tenue ou mythe ?</h3>
-              <p class="ex">On en parle depuis 2015. Les outils ont progressé. Les usages, beaucoup moins. Ce qui bloque vraiment n'est pas technique — c'est culturel.</p>
+              <p class="kicker">IA générative · MCP</p>
+              <h3>Brancher un agent IA sur son modèle sémantique : guide pratique avec MCP</h3>
+              <p class="ex">Exposer un modèle de données à un agent via le protocole MCP, avec les garde-fous qui comptent : périmètre, droits d'accès, étiquettes de sensibilité, traçabilité des réponses.</p>
             </div>
-            <p class="row-time">8 min</p>
+            <p class="row-time">T2 2027</p>
+          </li>
+          <li class="row" data-status="bientot">
+            <span class="badge badge--soon">Bientôt</span>
+            <div>
+              <p class="kicker">Data Viz · Méthode</p>
+              <h3>Concevoir un tableau de bord qui sert la décision : la méthode d'atelier</h3>
+              <p class="ex">De la question métier à la maquette validée avant la première ligne de requête : une méthode d'atelier pour concevoir des tableaux de bord que les équipes utilisent vraiment.</p>
+            </div>
+            <p class="row-time">T2 2027</p>
+          </li>
+          <li class="row" data-status="bientot">
+            <span class="badge badge--soon">Bientôt</span>
+            <div>
+              <p class="kicker">Souveraineté · Réglementation</p>
+              <h3>Cloud souverain, SecNumCloud, AI Act : ce que 2026-2027 change pour vos tableaux de bord</h3>
+              <p class="ex">Où s'exécutent vos analyses, qui peut lire quoi, sous quel droit ? Les points de contrôle réglementaires à passer en revue pour une BI et des agents IA conformes.</p>
+            </div>
+            <p class="row-time">T3 2027</p>
           </li>
         </ul>
       </div>
